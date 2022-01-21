@@ -18,7 +18,7 @@ namespace EsercitazioneRubrica.EF.Configuration
             builder.Property(l => l.Tipologia).IsRequired();
             builder.Property(l => l.Via).IsRequired();
             builder.Property(l => l.Citta).IsRequired();
-            builder.Property(l => l.Cap).IsRequired();
+            builder.Property(l => l.Cap).IsRequired().HasMaxLength(5);
             builder.Property(l => l.Provincia).IsRequired();
             builder.Property(l => l.Nazione).IsRequired();
 

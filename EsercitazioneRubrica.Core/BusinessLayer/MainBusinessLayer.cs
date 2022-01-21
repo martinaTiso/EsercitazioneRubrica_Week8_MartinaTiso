@@ -23,7 +23,7 @@ namespace EsercitazioneRubrica.Core.BusinessLayer
 
         public Esito EliminaContatto(int idContattoDaEliminare)
         {
-            var indirizzi = indirizziRepo.GetIndirizziByID( idContattoDaEliminare);
+            var indirizzi = indirizziRepo.GetIndirizziByID(idContattoDaEliminare);
             var contattoEsistente = contattiRepo.GetByCode(idContattoDaEliminare);
             if (contattoEsistente == null)
             {
@@ -31,15 +31,19 @@ namespace EsercitazioneRubrica.Core.BusinessLayer
             }
             else
             {
-                if (indirizzi == null)
+                List<Indirizzo> indirizzoDelcontatto = indirizziRepo.GetIndirizziByID(idContattoDaEliminare);
+                if (indirizzoDelcontatto.Count == null)
                 {
-                    Console.WriteLine("Lista vuota");
+                    contattiRepo.Delete(contattoEsistente);
+                    return new Esito { Messaggio = "Contatto eliminato con successo", IsOk = true };
                 }
-                contattiRepo.Delete(contattoEsistente);
-                
+                else
+                {
+
+                    return new Esito { Messaggio = "Contatto eliminato con successo", IsOk = true };
+                }
+
             }
-           
-            return new Esito { Messaggio = "Contatto eliminata con successo", IsOk = true };
         }
 
 

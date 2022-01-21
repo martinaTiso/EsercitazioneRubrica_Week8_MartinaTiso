@@ -24,11 +24,14 @@ namespace EsercitazioneRubrica.EF.RepositoryEF
                 ctx.SaveChanges();
             }
             return item;
-        }
+        } 
 
         public bool Delete(Indirizzo item)
         {
-            throw new NotImplementedException();
+            ctx.Indirizzi.Remove(item);
+            ctx.SaveChanges();
+
+            return true;
         }
 
         public IList<Indirizzo> GetAll()

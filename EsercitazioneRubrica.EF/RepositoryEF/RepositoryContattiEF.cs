@@ -27,7 +27,10 @@ namespace EsercitazioneRubrica.EF.RepositoryEF
 
         public bool Delete(Contatto item)
         {
-            throw new NotImplementedException();
+            ctx.Contatti.Remove(item);
+            ctx.SaveChanges();
+
+            return true;
         }
 
         public IList<Contatto> GetAll()

@@ -77,20 +77,15 @@ void EliminaContatto()
 }
 void InserisciIndirizzo()
 {
-    Console.WriteLine("Inserisci la tipologia del nuovo indirizzo");
-    string tipologia = Console.ReadLine();
-    if(tipologia.Equals( "domicilio" ))
+    string tipologia;
+    do
     {
-        Console.WriteLine("continua inserimento");
-    }
-    else if (tipologia.Equals("residenza"))
-    {
-        Console.WriteLine("continua inserimento");  
-    
-    }else
-    {
-        Console.WriteLine("hai sbagliato a scrivere");
-    }
+        Console.WriteLine("inserisci tipologia :Residenza o Domicilio");
+        tipologia = Console.ReadLine();
+
+    } while (!(tipologia == "Residenza" || tipologia == "Domicilio"));
+
+
     Console.WriteLine("Inserisci la via del nuovo indirizzo");
     string via = Console.ReadLine();
     Console.WriteLine("Inserisci la città  del nuovo indirizzo");
