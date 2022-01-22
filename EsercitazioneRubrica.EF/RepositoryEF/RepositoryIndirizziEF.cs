@@ -50,9 +50,9 @@ namespace EsercitazioneRubrica.EF.RepositoryEF
             }
         }
         
-            public Indirizzo GetIndirizziByID(int id)
+            public List<Indirizzo> GetIndirizziByID(int id)
             {
-                return GetAll().Where(i => i.ContattoID == id).FirstOrDefault();
+                return GetAll().Where(i => i.ContattoID == id).ToList();
             }
         }
     }

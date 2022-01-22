@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercitazioneRubrica.Console", "EsercitazioneRubrica\EsercitazioneRubrica.Console.csproj", "{F723CFF2-C43E-4731-B131-52A7F9880CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsercitazioneRubrica.Console", "EsercitazioneRubrica\EsercitazioneRubrica.Console.csproj", "{F723CFF2-C43E-4731-B131-52A7F9880CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercitazioneRubrica.Core", "EsercitazioneRubrica.Core\EsercitazioneRubrica.Core.csproj", "{106B1AFF-4FF1-4C13-B1EF-22917A8B7DD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsercitazioneRubrica.Core", "EsercitazioneRubrica.Core\EsercitazioneRubrica.Core.csproj", "{106B1AFF-4FF1-4C13-B1EF-22917A8B7DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercitazioneRubrica.Mock", "EsercitazioneRubrica.Mock\EsercitazioneRubrica.Mock.csproj", "{4BD0BE5A-BBA0-4F2B-BC2B-17C4D8EDF9D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsercitazioneRubrica.Mock", "EsercitazioneRubrica.Mock\EsercitazioneRubrica.Mock.csproj", "{4BD0BE5A-BBA0-4F2B-BC2B-17C4D8EDF9D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercitazioneRubrica.EF", "EsercitazioneRubrica.EF\EsercitazioneRubrica.EF.csproj", "{8644D9A6-02A2-41AC-B7BF-267ABDAD872A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsercitazioneRubrica.EF", "EsercitazioneRubrica.EF\EsercitazioneRubrica.EF.csproj", "{8644D9A6-02A2-41AC-B7BF-267ABDAD872A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsercitazioneRubrica.TEST", "EsercitazioneRubrica.TEST\EsercitazioneRubrica.TEST.csproj", "{2C318BC8-D171-4046-B9C4-F9901BE4282B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8644D9A6-02A2-41AC-B7BF-267ABDAD872A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8644D9A6-02A2-41AC-B7BF-267ABDAD872A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8644D9A6-02A2-41AC-B7BF-267ABDAD872A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C318BC8-D171-4046-B9C4-F9901BE4282B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C318BC8-D171-4046-B9C4-F9901BE4282B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C318BC8-D171-4046-B9C4-F9901BE4282B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C318BC8-D171-4046-B9C4-F9901BE4282B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

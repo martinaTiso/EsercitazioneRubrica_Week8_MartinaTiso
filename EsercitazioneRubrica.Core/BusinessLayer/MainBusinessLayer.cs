@@ -23,7 +23,7 @@ namespace EsercitazioneRubrica.Core.BusinessLayer
 
         public Esito EliminaContatto(int idContattoDaEliminare)
         {
-            var indirizzi = indirizziRepo.GetIndirizziByID(idContattoDaEliminare);
+            
             var contattoEsistente = contattiRepo.GetByCode(idContattoDaEliminare);
             if (contattoEsistente == null)
             {
@@ -32,7 +32,7 @@ namespace EsercitazioneRubrica.Core.BusinessLayer
             else
             {
                 List<Indirizzo> indirizzoDelcontatto = indirizziRepo.GetIndirizziByID(idContattoDaEliminare);
-                if (indirizzoDelcontatto.Count == null)
+                if (indirizzoDelcontatto.Count == 0)
                 {
                     contattiRepo.Delete(contattoEsistente);
                     return new Esito { Messaggio = "Contatto eliminato con successo", IsOk = true };
@@ -40,7 +40,7 @@ namespace EsercitazioneRubrica.Core.BusinessLayer
                 else
                 {
 
-                    return new Esito { Messaggio = "Contatto eliminato con successo", IsOk = true };
+                    return new Esito { Messaggio = "non è possibile eliminare il contatto", IsOk = false };
                 }
 
             }

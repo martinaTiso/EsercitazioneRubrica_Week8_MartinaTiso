@@ -67,8 +67,9 @@ bool AnalizzaScelta(int scelta)
 
 void EliminaContatto()
 {
-    Console.WriteLine("Elenco completo dei indirizzi disponibili:");
+    Console.WriteLine("Elenco completo dei contatti:");
     VisualizzaContatti();
+
     Console.WriteLine("Quale contatto vuoi eliminare? Inserisci l'id");
     int idContattoDaEliminare = int.Parse(Console.ReadLine());
     Esito esito = bl.EliminaContatto(idContattoDaEliminare);
@@ -77,6 +78,32 @@ void EliminaContatto()
 }
 void InserisciIndirizzo()
 {
+    //lo creo
+    Indirizzo nuovoIndirizzo = new Indirizzo();
+
+    Console.WriteLine("Elenco completo dei contatti:");
+    VisualizzaContatti();
+
+    //TODO chiedi a quale contatto associare - id
+    bool contattoValido = false;
+    int idContatto = 0;
+    do
+    {
+        Console.WriteLine("inserisci l'id del contatto da associare all'indirizzo");
+        idContatto = int.Parse(Console.ReadLine());
+
+        //TODO controllare id valido
+        List<Contatto> cs = bl.GetAllContatti();
+        foreach( Contatto c in cs) {
+            if(c.ContattoID == idContatto)
+            {
+                contattoValido = true;
+                break;
+            }
+        }
+    } while (!contattoValido);
+    nuovoIndirizzo.ContattoID = idContatto;
+
     string tipologia;
     do
     {
@@ -84,29 +111,18 @@ void InserisciIndirizzo()
         tipologia = Console.ReadLine();
 
     } while (!(tipologia == "Residenza" || tipologia == "Domicilio"));
-
+    nuovoIndirizzo.Tipologia = tipologia;
 
     Console.WriteLine("Inserisci la via del nuovo indirizzo");
-    string via = Console.ReadLine();
+    nuovoIndirizzo.Via = Console.ReadLine();
     Console.WriteLine("Inserisci la città  del nuovo indirizzo");
-    string citta = Console.ReadLine();
+    nuovoIndirizzo.Citta = Console.ReadLine();
     Console.WriteLine("Inserisci il cap del nuovo indirizzo");
-    int cap =int.Parse( Console.ReadLine());
+    nuovoIndirizzo.Cap = int.Parse( Console.ReadLine());
     Console.WriteLine("Inserisci la provincia del nuovo indirizzo");
-    string provincia = Console.ReadLine();
+    nuovoIndirizzo.Provincia = Console.ReadLine();
     Console.WriteLine("Inserisci la Nazione del nuovo indirizzo");
-    string nazione = Console.ReadLine();
-
-
-    //lo creo
-    Indirizzo nuovoIndirizzo = new Indirizzo();
-    nuovoIndirizzo.Tipologia = tipologia;
-    nuovoIndirizzo.Via = via;
-    nuovoIndirizzo.Citta = citta;
-    nuovoIndirizzo.Cap = cap;
-    nuovoIndirizzo.Provincia = provincia;
-    nuovoIndirizzo.Nazione = nazione;
-
+    nuovoIndirizzo.Nazione = Console.ReadLine();
 
     //lo passo al business layer per controllare i dati ed aggiungerlo poi nel "DB".
     Esito esito = bl.InserisciNuovoIndirizzo(nuovoIndirizzo);
